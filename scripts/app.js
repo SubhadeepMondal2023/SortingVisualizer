@@ -10,6 +10,7 @@ const start = async () => {
     alert("No Algorithm Selected");
     return;
   }
+  updateComplexities(algoValue);
 
   let algorithm = new sortAlgorithms(speedValue);
   if (algoValue === 1) await algorithm.BubbleSort();
@@ -74,7 +75,37 @@ const randomList = async (Length) => {
   }
   return list;
 };
+const updateComplexities = (algoValue) => {
+  const timeComplexity = document.getElementById("time-complexity");
+  const spaceComplexity = document.getElementById("space-complexity");
 
+  switch (algoValue) {
+    case 1:
+      timeComplexity.textContent = "Time Complexity: O(n^2) (Worst Case)";
+      spaceComplexity.textContent = "Space Complexity: O(1)";
+      break;
+    case 2:
+      timeComplexity.textContent = "Time Complexity: O(n^2) (Worst Case)";
+      spaceComplexity.textContent = "Space Complexity: O(1)";
+      break;
+    case 3:
+      timeComplexity.textContent = "Time Complexity: O(n^2) (Worst Case)";
+      spaceComplexity.textContent = "Space Complexity: O(1)";
+      break;
+    case 4:
+      timeComplexity.textContent = "Time Complexity: O(n log n) (Worst Case)";
+      spaceComplexity.textContent = "Space Complexity: O(n)";
+      break;
+    case 5:
+      timeComplexity.textContent = "Time Complexity: O(n^2) (Worst Case)";
+      spaceComplexity.textContent = "Space Complexity: O(log n)";
+      break;
+    default:
+      timeComplexity.textContent = "Time Complexity: ";
+      spaceComplexity.textContent = "Space Complexity: ";
+      break;
+  }
+};
 const clearScreen = async () => {
   document.querySelector(".array").innerHTML = "";
 };
